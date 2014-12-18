@@ -1,14 +1,29 @@
 <head>
-  <title>dev_blog</title>
+    <title>Calvin Thigpen</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+    <h1>Calvin Thigpen's Personal Web Development Blog</h1>
+    
+    {{> posts}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="posts">
+    <div>
+        {{#each entry}}
+            <h2 class="post post-title {{selectedClass}}">{{title}}</h2>
+            <p class="post post-body {{selectedClass}}">{{body}}</p>
+        {{/each}}
+    </div>
+    {{> newEntry}}
+</template>
+
+<template name="newEntry">
+    <form>
+        <input type="text" name="title" placeholder="Title" />
+        <br/>
+        <textarea cols="100" rows="7" name="body"></textarea>
+        <br/>
+        <input type="submit" value="Post new blog entry" />
+    </form>
 </template>
