@@ -1,0 +1,9 @@
+<template name="posts">
+  <div>
+    {{#each entry}}
+      <h2 class="post post-title {{selectedClass}}">{{title}}</h2>
+      <p class="post post-body {{selectedClass}}">{{body}}</p>
+    {{/each}}
+  </div>
+  {{> newEntry}}
+</template>
